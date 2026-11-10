@@ -32,6 +32,20 @@ Official setup reference: https://docs.github.com/en/pages/getting-started-with-
 
 The supplied logo is preserved unchanged in `assets/makers-logo.png` and used in the header, footer and favicon.
 
+## Security and privacy
+
+Every page has a Content Security Policy that allows local assets, blocks native form submission and network API requests, and authorises the exact JSON-LD with a hash. Links use a no-referrer policy. Enquiry details stay in the browser until the visitor chooses to copy and paste into WhatsApp; they never enter URLs. The form stays disabled if JavaScript cannot initialise. Images and fonts are served locally.
+
+Embedded pages are replaced with a direct-site link as a best-effort safeguard. Full anti-framing protection needs the HTTP `Content-Security-Policy: frame-ancestors 'none'` or `X-Frame-Options: DENY` response header. GitHub Pages does not apply custom response headers from repository files. On a host that supports them, also configure `X-Content-Type-Options: nosniff` and a restrictive `Permissions-Policy`. Unsupported meta tags are not equivalent protections.
+
+Protect the GitHub owner account with a passkey or two-factor authentication, review collaborators and app access, and protect the publishing branch. These are account/repository administration settings. Public phone numbers and branding remain copyable; this site cannot guarantee prevention of spam or impersonation. Never commit private credentials or client documents.
+
+Run `npm run build:pages` and `npm run check` before publication. Do not relax CSP with `unsafe-inline` or `unsafe-eval`.
+
+## Asset attribution
+
+The study photograph was originally loaded from Unsplash photo `1523240795612-9a054b0db644` and is now stored locally. DM Sans and Manrope use the SIL Open Font License; their license texts are included in `assets/fonts/`.
+
 ## Custom domain or another host
 
 Set the `SITE_URL` environment variable to your final HTTPS site URL before building. Links, canonical metadata and the sitemap use that URL and its path prefix. Deploy the generated `dist/` directory to any static HTTPS host. At a project path such as `/Makers-Educational-Consult/`, `robots.txt` cannot control the host's root; the generated sitemap is still available at `/Makers-Educational-Consult/sitemap.xml`.

@@ -1,4 +1,10 @@
 /* Readable type, responsive reflow and the visitor's system colour scheme. */
+[hidden] { display: none !important; }
+fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+fieldset:disabled { opacity: .65; }
+.enquiry-actions { display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: center; margin-top: 20px; }
+#enquiry-preview { padding-top: 20px; border-top: 1px solid var(--line); margin-top: 25px; }
+#prepared-message { white-space: pre-wrap; }
 :root { color-scheme: light; --muted: #50645a; }
 html { font-size: 100%; -webkit-text-size-adjust: 100%; }
 body { font-size: 1.125rem; line-height: 1.65; }
