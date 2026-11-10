@@ -29,7 +29,7 @@ write('/privacy/',page('Privacy','How the Makers website handles enquiry informa
 fs.writeFileSync(root+'/robots.txt',`User-agent: *\nAllow: /\nSitemap: ${origin}/sitemap.xml\n`);
 const urls=['/','/about/','/resources/','/contact/','/privacy/',...services.map(s=>'/services/'+s[1]+'/')];
 fs.writeFileSync(root+'/sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.map(u=>`<url><loc>${origin}${u}</loc></url>`).join('')}</urlset>`);
-fs.copyFileSync('style.css',root+'/style.css');fs.copyFileSync('app.js',root+'/app.js');
+fs.writeFileSync(root+'/style.css',fs.readFileSync('style.css','utf8')+'\n'+fs.readFileSync('readability.css','utf8'));fs.copyFileSync('app.js',root+'/app.js');
 fs.cpSync('assets',root+'/assets',{recursive:true});
 if(fs.existsSync(root+'/favicon.svg'))fs.unlinkSync(root+'/favicon.svg');
 fs.writeFileSync(root+'/.nojekyll','');
