@@ -1,0 +1,1 @@
+{"name":"makers-education-consult","private":true,"scripts":{"build":"node build.mjs","build:pages":"node build.mjs --pages","check":"node check.mjs","dev":"node serve.mjs"}}

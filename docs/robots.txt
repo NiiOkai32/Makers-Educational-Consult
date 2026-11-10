@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://niiokai32.github.io/Makers-Educational-Consult/sitemap.xml

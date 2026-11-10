@@ -1,0 +1,5 @@
+import fs from 'node:fs';import path from 'node:path';
+let count=0;
+const sitePath=new URL(process.env.SITE_URL || 'https://niiokai32.github.io/Makers-Educational-Consult').pathname.replace(/\/$/,'');
+function walk(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){const file=path.join(dir,e.name);if(e.isDirectory())walk(file);else if(file.endsWith('.html')){const html=fs.readFileSync(file,'utf8');if((html.match(/<h1[> ]/g)||[]).length!==1)throw Error(file+' requires one H1');const schema=html.match(/<script type="application\/ld\+json">(.*?)<\/script>/);if(!schema)throw Error('Missing schema');JSON.parse(schema[1]);for(const match of html.matchAll(/(?:href|src)="(\/[^" ]*)"/g)){const url=match[1].split(/[?#]/)[0];if(!url.startsWith(sitePath+'/'))throw Error('Missing hosting prefix '+url);const local=url.slice(sitePath.length)||'/';if(!fs.existsSync(path.join('dist',local)))throw Error('Broken internal URL '+url+' in '+file);}if(html.includes('chatgpt.site'))throw Error('Old hosting URL in '+file);count++;}}}
+walk('dist');console.log('Verified '+count+' pages: links, image assets, hosting prefixes, H1 headings and structured data.');
