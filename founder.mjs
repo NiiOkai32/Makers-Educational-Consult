@@ -1,7 +1,7 @@
 export const founderProfile = `<section class="section founder-section" id="founder" aria-labelledby="founder-name">
   <div class="founder-identity">
     <div class="eyebrow">MEET OUR FOUNDER</div>
-    <figure class="founder-photo"><img src="/assets/founder-photo.svg" alt="Placeholder for Emmanuel Larbi Kwesi’s portrait" width="640" height="800" loading="lazy"><figcaption>Emmanuel Larbi Kwesi · Founder</figcaption></figure>
+    <figure class="founder-photo"><img src="/assets/founder-photo.jpg" alt="Emmanuel Larbi Kwesi, founder of Makers Educational Consult" width="810" height="1080" loading="lazy"><figcaption>Emmanuel Larbi Kwesi · Founder</figcaption></figure>
     <h2 id="founder-name">Emmanuel<br>Larbi Kwesi</h2>
     <p class="founder-role">Founder, Makers Educational Consult</p>
     <div class="founder-values">Excellence. Integrity. Service.</div>

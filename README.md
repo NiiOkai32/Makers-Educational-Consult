@@ -1,6 +1,6 @@
 # Makers Education Consult
 
-Standalone static website. No ChatGPT sign-in, runtime, API or framework dependency is required.
+Standalone static website with locally served assets and no runtime or framework dependency.
 
 ## Build and preview
 
@@ -26,9 +26,7 @@ Official setup reference: https://docs.github.com/en/pages/getting-started-with-
 
 ## Replace the founder photo
 
-1. Put your portrait at `assets/founder-photo.jpg` (a 4:5 portrait works best).
-2. In `founder.mjs`, change `/assets/founder-photo.svg` to `/assets/founder-photo.jpg` and change the image alt text to `Emmanuel Larbi Kwesi, founder of Makers Educational Consult`.
-3. Run `npm run build:pages` and `npm run check`, then commit the source and rebuilt `docs/`.
+The founder portrait is stored at `assets/founder-photo.jpg` and used on the About page. To replace it, update that file and the image dimensions in `founder.mjs`, then run `npm run build:pages` and `npm run check`.
 
 The supplied logo is preserved unchanged in `assets/makers-logo.png` and used in the header, footer and favicon.
 
